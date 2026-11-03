@@ -581,6 +581,6 @@ Invoice dicetak beserta kode transaksi serta sisa saldo
 
 
 # 3.4 Keluar
-Terima Kasih Telah Menggunakan Program ini
+Program akan keluar
 
-<img width="1012" height="416" alt="image" src="https://github.com/user-attachments/assets/3689ab96-f344-457c-96a4-80734846d29c" />
+<img width="667" height="273" alt="Screenshot 2026-11-03 231059" src="https://github.com/user-attachments/assets/d715b73b-d9db-4afb-bfce-043911569bb3" />
