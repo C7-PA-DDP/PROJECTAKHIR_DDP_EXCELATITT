@@ -537,7 +537,7 @@ Admin mengisi nama kelas, instruktur, jadwal, harga, dan sisa kuota
 Admin memilih ID kelas lalu mengisi data yang baru
 
 
-<img width="782" height="536" alt="Screenshot 2026-11-03 223544" src="https://github.com/user-attachments/assets/d92f8c49-1963-413c-af66-89f761372a42" />
+<img width="936" height="601" alt="Screenshot 2026-11-03 230610" src="https://github.com/user-attachments/assets/54bb3ab0-6042-4a51-b0ce-de19beeed98e" />
 
 5. Menu hapus kelas 
 Sebelum dihapus, program akan meminta konfirmasi (y/n)
