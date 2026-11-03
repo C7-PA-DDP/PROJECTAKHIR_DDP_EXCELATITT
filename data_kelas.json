@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nama": "Zumba",
+        "instruktur": "wawa",
+        "jadwal": "Senin 07:00",
+        "harga": 50000,
+        "kuota": 14
+    },
+    {
+        "id": 2,
+        "nama": "Body Pump",
+        "instruktur": "Juhdi",
+        "jadwal": "Selasa 17:00",
+        "harga": 40000,
+        "kuota": 19
+    },
+    {
+        "id": 3,
+        "nama": "Body Combat",
+        "instruktur": "Alfian",
+        "jadwal": "Rabu 18:30",
+        "harga": 60000,
+        "kuota": 12
+    },
+    {
+        "id": 4,
+        "nama": "Spinning",
+        "instruktur": "Excel",
+        "jadwal": "Kamis 06:30",
+        "harga": 55000,
+        "kuota": 10
+    },
+    {
+        "id": 5,
+        "nama": "Pilates",
+        "instruktur": "Vita",
+        "jadwal": "Jumat 16:00",
+        "harga": 65000,
+        "kuota": 8
+    }
+]
