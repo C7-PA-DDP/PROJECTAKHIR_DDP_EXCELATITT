@@ -502,85 +502,57 @@ Program menyaring reservasi yang `username`-nya sama dengan member yang login (`
 
 Menu utama menampilkan judul SISTEM RESERVASI GYM & FITNESS dengan tiga pilihan: Login, Registrasi, dan Keluar
 
-
+2. Tampilan menu login
 <img width="542" height="195" alt="image" src="https://github.com/user-attachments/assets/d2446505-3d9c-4a96-aa4f-98aadd87133a" />
 
-2. Tampilan menu login
+Tampilan menu login salah memasukan user 3 kali
 
-
-<img width="562" height="303" alt="image" src="https://github.com/user-attachments/assets/eb2b91fc-cdf8-4293-9f44-201339010104" />
-
-Tampilan menu login salah memasukan user 3 kali 
 3. Setelah 3 kali salah, pengguna akan di arahkan ke menu utama
-
+<img width="562" height="303" alt="image" src="https://github.com/user-attachments/assets/eb2b91fc-cdf8-4293-9f44-201339010104" />
 
 # 3.2 Menu Admin 
 1. Tampilan Menu admin 
-
 <img width="486" height="217" alt="image" src="https://github.com/user-attachments/assets/5b1929f5-fbb3-421d-b278-943b2d20b43b" />
 
-
-<img width="756" height="457" alt="image" src="https://github.com/user-attachments/assets/e17ee8ce-9c88-49ee-88be-8388e67a4109" />
-
 2. Submenu untuk mengelola reservasi GYM/Fitness
-
-
-<img width="591" height="421" alt="Screenshot 2026-11-03 223232" src="https://github.com/user-attachments/assets/06d3c68e-d6b1-4399-a35b-012667507e35" />
+<img width="756" height="457" alt="image" src="https://github.com/user-attachments/assets/e17ee8ce-9c88-49ee-88be-8388e67a4109" />
 
 3. Menu tambah kelas
 Admin mengisi nama kelas, instruktur, jadwal, harga, dan sisa kuota 
-
-
-<img width="721" height="708" alt="Screenshot 2026-11-03 223459" src="https://github.com/user-attachments/assets/141063b8-8e67-48aa-a2c7-14c16211e509" />
+<img width="591" height="421" alt="Screenshot 2026-11-03 223232" src="https://github.com/user-attachments/assets/06d3c68e-d6b1-4399-a35b-012667507e35" />
 
 4. Menu ubah kelas 
 Admin memilih ID kelas lalu mengisi data yang baru
-
-
-<img width="936" height="601" alt="Screenshot 2026-11-03 230610" src="https://github.com/user-attachments/assets/54bb3ab0-6042-4a51-b0ce-de19beeed98e" />
+<img width="721" height="708" alt="Screenshot 2026-11-03 223459" src="https://github.com/user-attachments/assets/141063b8-8e67-48aa-a2c7-14c16211e509" />
 
 5. Menu hapus kelas 
 Sebelum dihapus, program akan meminta konfirmasi (y/n)
-
-
-<img width="497" height="187" alt="image" src="https://github.com/user-attachments/assets/06350974-a904-46a9-bb4c-eb6fe5742150" />
+<img width="936" height="601" alt="Screenshot 2026-11-03 230610" src="https://github.com/user-attachments/assets/54bb3ab0-6042-4a51-b0ce-de19beeed98e" />
 
 6. Daftar akun
-
+<img width="497" height="187" alt="image" src="https://github.com/user-attachments/assets/06350974-a904-46a9-bb4c-eb6fe5742150" />
 
 # 3.3 Menu User
 1. Tampilan menu user
-
 <img width="355" height="202" alt="image" src="https://github.com/user-attachments/assets/e3edbff0-a88e-40ad-b3f3-bdbce2285c84" />
 
-
+2. Reservasi kelas
 <img width="791" height="352" alt="image" src="https://github.com/user-attachments/assets/1f6007bd-8dfc-43f3-807a-78e8ced98291" />
 
-2. Reservasi kelas
-
-
+3. Tampilan apabila dari user tersebut tidak memiliki saldo yang cukup 
 <img width="741" height="592" alt="Screenshot 2026-11-03 223112" src="https://github.com/user-attachments/assets/6fc5e049-ee8b-49b5-bc02-bf46133de08c" />
 
-3. Tampilan apabila dari user tersebut tidak memiliki saldo yang cukup 
-
-
-<img width="487" height="277" alt="image" src="https://github.com/user-attachments/assets/604d769f-8499-4ddd-9361-777f8f5607e9" />
-
 4. Tampilan Top up saldo 
-
-
-<img width="792" height="801" alt="image" src="https://github.com/user-attachments/assets/4e823982-75aa-4237-8392-2319520c0505" />
+<img width="487" height="277" alt="image" src="https://github.com/user-attachments/assets/604d769f-8499-4ddd-9361-777f8f5607e9" />
 
 5. Tampilan setelah berhasil reservasi kelas 
 Invoice dicetak beserta kode transaksi serta sisa saldo
-
-
-<img width="1012" height="416" alt="image" src="https://github.com/user-attachments/assets/8ad4e066-a6a5-46f7-a7ec-eb86c9c76613" />
+<img width="792" height="801" alt="image" src="https://github.com/user-attachments/assets/4e823982-75aa-4237-8392-2319520c0505" />
 
 6. Tampilan Riwayat reservasi kelas 
+<img width="1012" height="416" alt="image" src="https://github.com/user-attachments/assets/8ad4e066-a6a5-46f7-a7ec-eb86c9c76613" />
 
 
 # 3.4 Keluar
 Program akan keluar
-
 <img width="667" height="273" alt="Screenshot 2026-11-03 231059" src="https://github.com/user-attachments/assets/d715b73b-d9db-4afb-bfce-043911569bb3" />
