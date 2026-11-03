@@ -8,10 +8,10 @@ Aplikasi **berbasis terminal (CLI)** yang ditulis dengan **Python** untuk mengel
 
 | No | Nama | NIM | Peran dalam kelompok |
 |:--:|------|:---:|---------------------|
-| 1 | Marexcel Elibino | 2609116087 | Kode program dan flowchart |
-| 2 | Muhammad Ardhika Prasanjayu | 2609116108 | |
-| 3 | Alfian Nugraha | 2609116084 | |
-| 4 | Novitasari Muhammad Noor | 2609116082 | |
+| 1 | Marexcel Elibino | 2609116087 | Kode program dan Flowchart |
+| 2 | Muhammad Ardhika Prasanjayu | 2609116108 | Codingan Python |
+| 3 | Alfian Nugraha | 2609116084 | Laporan dan Flowchart |
+| 4 | Novitasari Muhammad Noor | 2609116082 | Laporan dan Flowchart |
 
 Program Studi Sistem Informasi, Fakultas Teknik, Universitas Mulawarman, Samarinda.
 
