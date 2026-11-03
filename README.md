@@ -190,7 +190,7 @@ Data disimpan dalam tiga file berformat JSON (UTF-8, indentasi 4 spasi).
         "saldo": 0,
         "terdaftar": "-"
     },
-    "budi": {
+    "user": {
         "password": "e8979d2eb704c94fa2fa5044edba1c29232526eec3965ffc64308b6783f2de12",
         "role": "user",
         "saldo": 60000,
@@ -240,7 +240,7 @@ Data disimpan dalam tiga file berformat JSON (UTF-8, indentasi 4 spasi).
 [
     {
         "invoice": "INV-261103-6234",
-        "username": "budi",
+        "username": "juhdi",
         "id_kelas": 2,
         "nama_kelas": "Body Pump",
         "jadwal": "Selasa 17:00",
