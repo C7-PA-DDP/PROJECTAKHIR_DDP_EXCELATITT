@@ -256,11 +256,11 @@ Flowchart dibuat dengan **draw.io** (file sumber: [`reservasi_gym_fitnes.drawio`
 | Silinder oranye tua | Proses yang membaca atau menulis data (JSON) atau menampilkan tabel data |
 | Lingkaran bernomor **1** | Penghubung kembali ke awal perulangan menu pada halaman yang sama |
 | Pentagon **A**, **B**, **C** | Penghubung antarhalaman: **A** = Menu Admin, **B** = Menu Member, **C** = kembali ke Menu Utama setelah logout |
-
 ### Halaman 1: Alur Utama (Main)
 
 <p align="center">
-  <a href="images/flowchart/01_main_full.png"><img src="images/flowchart/01_main_full.png" width="860" alt="Flowchart utama (gambaran umum)"></a><br>
+<img width="3817" height="2426" alt="reservasi_gym_fitnes-Flowchart Reservasi Gym   Fitness (Main) drawio" src="https://github.com/user-attachments/assets/f19f10f4-51a9-4c86-b5e7-a9dc412ab43f" />
+
   <em>Gambar 1. Flowchart utama (gambaran umum)</em>
 </p>
 
@@ -269,7 +269,8 @@ Alur utama mencakup inisialisasi program, menu utama, login, registrasi, dan kel
 #### a. Inisialisasi dan memuat data
 
 <p align="center">
-  <a href="images/flowchart/01a_main_inisialisasi_menu.png"><img src="images/flowchart/01a_main_inisialisasi_menu.png" width="820" alt="Flowchart utama: inisialisasi, memuat data, dan menu utama"></a><br>
+<img width="646" height="404" alt="Screenshot 2026-11-03 214030" src="https://github.com/user-attachments/assets/d13a36c8-603f-4444-bbc5-56591d9a47b2" />    
+    
   <em>Gambar 2. Flowchart utama: inisialisasi, memuat data, dan menu utama</em>
 </p>
 
@@ -282,7 +283,8 @@ Alur utama mencakup inisialisasi program, menu utama, login, registrasi, dan kel
 #### b. Login
 
 <p align="center">
-  <a href="images/flowchart/01b_main_login.png"><img src="images/flowchart/01b_main_login.png" width="820" alt="Flowchart utama: proses login"></a><br>
+<img width="479" height="406" alt="image" src="https://github.com/user-attachments/assets/16de12e6-b27c-4e2a-8622-df3ca2f86ba5" />    
+    
   <em>Gambar 3. Flowchart utama: proses login</em>
 </p>
 
@@ -296,7 +298,8 @@ Alur utama mencakup inisialisasi program, menu utama, login, registrasi, dan kel
 #### c. Registrasi
 
 <p align="center">
-  <a href="images/flowchart/01c_main_registrasi.png"><img src="images/flowchart/01c_main_registrasi.png" width="640" alt="Flowchart utama: proses registrasi"></a><br>
+<img width="326" height="417" alt="image" src="https://github.com/user-attachments/assets/af2f0e8e-fff2-41be-836a-3047258333f0" />    
+    
   <em>Gambar 4. Flowchart utama: proses registrasi</em>
 </p>
 
@@ -311,7 +314,8 @@ Alur utama mencakup inisialisasi program, menu utama, login, registrasi, dan kel
 #### d. Keluar dan pilihan tidak valid
 
 <p align="center">
-  <a href="images/flowchart/01d_main_keluar_invalid.png"><img src="images/flowchart/01d_main_keluar_invalid.png" width="860" alt="Flowchart utama: keluar program dan pilihan tidak valid"></a><br>
+<img width="210" height="237" alt="image" src="https://github.com/user-attachments/assets/c3bfe99b-8b7f-48ae-8acc-78353be81e87" />    
+    
   <em>Gambar 5. Flowchart utama: keluar program dan pilihan tidak valid</em>
 </p>
 
@@ -323,7 +327,8 @@ Alur utama mencakup inisialisasi program, menu utama, login, registrasi, dan kel
 ### Halaman 2: Menu Admin
 
 <p align="center">
-  <a href="images/flowchart/02_admin_full.png"><img src="images/flowchart/02_admin_full.png" width="860" alt="Flowchart Menu Admin (gambaran umum)"></a><br>
+<img width="5672" height="2600" alt="reservasi_gym_fitnes-Menu Admin drawio" src="https://github.com/user-attachments/assets/7c3d212a-ab92-493a-afb3-cde90b686940" />    
+    
   <em>Gambar 6. Flowchart Menu Admin (gambaran umum)</em>
 </p>
 
@@ -332,7 +337,8 @@ Menu admin berjalan dalam perulangan `while True` sampai admin memilih **0. Logo
 #### a. Menu dan Lihat Kelas (pilihan 1)
 
 <p align="center">
-  <a href="images/flowchart/02a_admin_menu_lihat_kelas.png"><img src="images/flowchart/02a_admin_menu_lihat_kelas.png" width="560" alt="Flowchart Menu Admin: tampilan menu dan Lihat Kelas"></a><br>
+<img width="306" height="323" alt="Screenshot 2026-11-03 215235" src="https://github.com/user-attachments/assets/8f6fc20e-e8fc-4ecf-a4d8-d33bde355ec3" />    
+    
   <em>Gambar 7. Flowchart Menu Admin: tampilan menu dan Lihat Kelas</em>
 </p>
 
@@ -341,7 +347,8 @@ Dari konektor **A**, layar dibersihkan dan menu admin ditampilkan (enam pilihan 
 #### b. Tambah Kelas (pilihan 2)
 
 <p align="center">
-  <a href="images/flowchart/02b_admin_tambah_kelas.png"><img src="images/flowchart/02b_admin_tambah_kelas.png" width="430" alt="Flowchart Menu Admin: Tambah Kelas"></a><br>
+<img width="167" height="417" alt="image" src="https://github.com/user-attachments/assets/d534210a-4ee7-40fe-987e-0912e7eedf87" />    
+    
   <em>Gambar 8. Flowchart Menu Admin: Tambah Kelas</em>
 </p>
 
@@ -352,7 +359,8 @@ Dari konektor **A**, layar dibersihkan dan menu admin ditampilkan (enam pilihan 
 #### c. Ubah Kelas (pilihan 3)
 
 <p align="center">
-  <a href="images/flowchart/02c_admin_ubah_kelas.png"><img src="images/flowchart/02c_admin_ubah_kelas.png" width="640" alt="Flowchart Menu Admin: Ubah Kelas"></a><br>
+<img width="263" height="422" alt="image" src="https://github.com/user-attachments/assets/cb91789e-7d39-42cf-b433-17cdacc2cb40" />    
+    
   <em>Gambar 9. Flowchart Menu Admin: Ubah Kelas</em>
 </p>
 
@@ -364,7 +372,8 @@ Dari konektor **A**, layar dibersihkan dan menu admin ditampilkan (enam pilihan 
 #### d. Hapus Kelas (pilihan 4)
 
 <p align="center">
-  <a href="images/flowchart/02d_admin_hapus_kelas.png"><img src="images/flowchart/02d_admin_hapus_kelas.png" width="640" alt="Flowchart Menu Admin: Hapus Kelas"></a><br>
+<img width="247" height="365" alt="image" src="https://github.com/user-attachments/assets/ebe077c5-c521-4985-9eb0-4c3cd7dba502" />    
+    
   <em>Gambar 10. Flowchart Menu Admin: Hapus Kelas</em>
 </p>
 
@@ -375,7 +384,8 @@ Dari konektor **A**, layar dibersihkan dan menu admin ditampilkan (enam pilihan 
 #### e. Lihat Semua Reservasi dan Lihat Daftar Member (pilihan 5 dan 6)
 
 <p align="center">
-  <a href="images/flowchart/02e_admin_lihat_reservasi_member.png"><img src="images/flowchart/02e_admin_lihat_reservasi_member.png" width="860" alt="Flowchart Menu Admin: Lihat Semua Reservasi dan Lihat Daftar Member"></a><br>
+<img width="378" height="217" alt="image" src="https://github.com/user-attachments/assets/1c620dfe-f7d6-4c57-b58c-e39e8e39038f" />    
+    
   <em>Gambar 11. Flowchart Menu Admin: Lihat Semua Reservasi dan Lihat Daftar Member</em>
 </p>
 
@@ -385,7 +395,8 @@ Dari konektor **A**, layar dibersihkan dan menu admin ditampilkan (enam pilihan 
 #### f. Logout dan pilihan tidak valid
 
 <p align="center">
-  <a href="images/flowchart/02f_admin_logout_invalid.png"><img src="images/flowchart/02f_admin_logout_invalid.png" width="860" alt="Flowchart Menu Admin: logout dan pilihan tidak valid"></a><br>
+<img width="427" height="294" alt="image" src="https://github.com/user-attachments/assets/90868a63-7aec-48fd-9359-96fbcf0e3ee2" />    
+    
   <em>Gambar 12. Flowchart Menu Admin: logout dan pilihan tidak valid</em>
 </p>
 
@@ -397,7 +408,8 @@ Dari konektor **A**, layar dibersihkan dan menu admin ditampilkan (enam pilihan 
 ### Halaman 3: Menu User (Member)
 
 <p align="center">
-  <a href="images/flowchart/03_user_full.png"><img src="images/flowchart/03_user_full.png" width="860" alt="Flowchart Menu User (gambaran umum)"></a><br>
+<img width="5192" height="2782" alt="reservasi_gym_fitnes-Menu User drawio" src="https://github.com/user-attachments/assets/000f33ba-876d-44e6-96cd-6a0a272537fb" />    
+    
   <em>Gambar 13. Flowchart Menu User (gambaran umum)</em>
 </p>
 
@@ -406,7 +418,8 @@ Menu member juga berjalan dalam perulangan `while True` sampai member memilih **
 #### a. Menu dan Lihat Kelas (pilihan 1)
 
 <p align="center">
-  <a href="images/flowchart/03a_user_menu_lihat_kelas.png"><img src="images/flowchart/03a_user_menu_lihat_kelas.png" width="480" alt="Flowchart Menu User: tampilan menu dan Lihat Kelas"></a><br>
+<img width="319" height="347" alt="image" src="https://github.com/user-attachments/assets/203e1bb2-115e-4c0b-a229-f58501d9e5a2" />
+
   <em>Gambar 14. Flowchart Menu User: tampilan menu dan Lihat Kelas</em>
 </p>
 
@@ -415,7 +428,8 @@ Dari konektor **B**, layar dibersihkan, menu member ditampilkan beserta saldo, l
 #### b. Reservasi Kelas (pilihan 2)
 
 <p align="center">
-  <a href="images/flowchart/03b_user_reservasi_kelas.png"><img src="images/flowchart/03b_user_reservasi_kelas.png" width="640" alt="Flowchart Menu User: Reservasi Kelas"></a><br>
+<img width="188" height="395" alt="image" src="https://github.com/user-attachments/assets/f1bc3673-8a90-4cb8-bdc3-25c4fe45a049" />
+
   <em>Gambar 15. Flowchart Menu User: Reservasi Kelas</em>
 </p>
 
@@ -433,7 +447,8 @@ Jika semua pemeriksaan lolos: saldo dikurangi harga kelas, kuota kelas dikurangi
 #### c. Top Up Saldo (pilihan 3)
 
 <p align="center">
-  <a href="images/flowchart/03c_user_top_up.png"><img src="images/flowchart/03c_user_top_up.png" width="860" alt="Flowchart Menu User: Top Up Saldo"></a><br>
+<img width="401" height="408" alt="image" src="https://github.com/user-attachments/assets/f607ed82-a1c1-4b98-8f93-a8c41dc9548c" />
+
   <em>Gambar 16. Flowchart Menu User: Top Up Saldo</em>
 </p>
 
@@ -445,7 +460,8 @@ Jika semua pemeriksaan lolos: saldo dikurangi harga kelas, kuota kelas dikurangi
 #### d. Riwayat Reservasi (pilihan 4)
 
 <p align="center">
-  <a href="images/flowchart/03d_user_riwayat.png"><img src="images/flowchart/03d_user_riwayat.png" width="400" alt="Flowchart Menu User: Riwayat Reservasi"></a><br>
+<img width="197" height="244" alt="image" src="https://github.com/user-attachments/assets/cea6a4b8-74e4-44c3-be90-c155def06dc4" />
+
   <em>Gambar 17. Flowchart Menu User: Riwayat Reservasi</em>
 </p>
 
@@ -454,7 +470,8 @@ Program menyaring reservasi yang `username`-nya sama dengan member yang login (`
 #### e. Batalkan Reservasi (pilihan 5)
 
 <p align="center">
-  <a href="images/flowchart/03e_user_batalkan_reservasi.png"><img src="images/flowchart/03e_user_batalkan_reservasi.png" width="640" alt="Flowchart Menu User: Batalkan Reservasi"></a><br>
+<img width="215" height="415" alt="image" src="https://github.com/user-attachments/assets/60eeb526-22d3-4251-a13e-02ed6dc7526e" />
+
   <em>Gambar 18. Flowchart Menu User: Batalkan Reservasi</em>
 </p>
 
@@ -469,14 +486,15 @@ Program menyaring reservasi yang `username`-nya sama dengan member yang login (`
 #### f. Logout dan pilihan tidak valid
 
 <p align="center">
-  <a href="images/flowchart/03f_user_logout_invalid.png"><img src="images/flowchart/03f_user_logout_invalid.png" width="640" alt="Flowchart Menu User: logout dan pilihan tidak valid"></a><br>
+<img width="393" height="234" alt="image" src="https://github.com/user-attachments/assets/fbc8fa83-88d4-4cbc-a960-92b98543e5a2" />
+
   <em>Gambar 19. Flowchart Menu User: logout dan pilihan tidak valid</em>
 </p>
 
 - Pilihan `'0'`: tampil *"Logout berhasil."*, perulangan dihentikan (`break`), dan alur kembali ke menu utama melalui konektor **C**.
 - Pilihan lain: tampil *"Menu tidak valid!"*, `jeda()`, lalu kembali ke menu member.
 
-
+---
 # 3,1 Menu Awal dan Login
 
 1. Tampilan menu utama
