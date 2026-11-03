@@ -485,10 +485,12 @@ Menu utama menampilkan judul SISTEM RESERVASI GYM & FITNESS dengan tiga pilihan:
 
 
 <img width="542" height="195" alt="image" src="https://github.com/user-attachments/assets/d2446505-3d9c-4a96-aa4f-98aadd87133a" />
+
 2. Tampilan menu login
 
 
 <img width="562" height="303" alt="image" src="https://github.com/user-attachments/assets/eb2b91fc-cdf8-4293-9f44-201339010104" />
+
 Tampilan menu login salah memasukan user 3 kali 
 3. Setelah 3 kali salah, pengguna akan di arahkan ke menu utama
 
