@@ -1,33 +1,336 @@
-Nama Anggota Kelompok EXCELATITT
-Alfian Nugraha (2609116084) .
-Novitasari Muhammad Nor (2609116082) . 
-Marexcel Elibino (2609116087) .
-Muhammad Ardhika Prsanjayu (2609116108)
+Sistem Reservasi Gym & Fitness
 
-SISTEM RESERVASI GYM/FITNESS
-Program ini adalah sistem reservasi gym/fitness yang dijalankan lewat terminal. Di bagian paling atas, kode memanggil beberapa pustaka: json untuk menyimpan data ke file, os untuk membersihkan layar, time untuk mengambil tanggal dan jam, random untuk membuat angka acak pada nomor invoice, PrettyTable untuk membuat tabel yang rapi, dan pwinput supaya password yang diketik berubah jadi tanda bintang. Setelah itu ada beberapa nilai tetap, yaitu nama tiga file penyimpanan (users.json, kelas.json, reservasi.json), pilihan nominal top up, batas top up terkecil Rp10.000 dan terbesar Rp5.000.000, serta data awal berupa satu akun admin dan lima kelas (Zumba, Body Pump, Body Combat, Spinning, dan Pilates). Berikutnya ada kumpulan fungsi bantu kecil. Ada fungsi untuk membersihkan layar, menahan layar sampai pengguna menekan Enter, dan mengubah angka jadi format rupiah seperti Rp50.000. Ada juga tiga fungsi input yang menjaga supaya pengguna tidak mengisi sembarangan: input teks tidak boleh kosong, input angka harus bilangan bulat dan tidak boleh di bawah batas minimal, dan input password tidak boleh kosong. Kalau isiannya salah, program akan terus bertanya sampai benar, jadi program tidak langsung error. Setelah itu ada fungsi untuk menyimpan dan memuat data. Saat program dibuka, data dibaca dari file JSON. Kalau file-nya belum ada atau rusak, program otomatis membuat yang baru dari data awal, jadi aman dijalankan pertama kali. Ada juga fungsi yang menambahkan kolom saldo dan tanggal daftar pada akun lama yang belum punya kolom itu, supaya data lama tetap bisa dipakai. Lalu ada fungsi untuk menampilkan data. Daftar kelas, daftar reservasi, dan daftar member ditampilkan dalam bentuk tabel, dan kalau datanya kosong program memberi tahu bahwa belum ada data. Ada pula fungsi yang mencetak invoice berbingkai garis berisi nomor invoice, tanggal, nama member, kelas, jadwal, total bayar, dan sisa saldo. Di bagian berikutnya ada fungsi-fungsi pembantu logika. Ada fungsi untuk mencari kelas berdasarkan ID, membuat ID baru (ID terbesar ditambah satu), dan membuat nomor invoice dari tanggal hari itu plus empat angka acak. Ada juga fungsi untuk menghitung berapa reservasi aktif di satu kelas, mengecek apakah seorang member sudah pernah memesan kelas tertentu, dan memotong saldo. Pemotongan saldo hanya berjalan kalau saldonya cukup. Untuk akun, ada fitur registrasi dan login. Saat registrasi, username diubah ke huruf kecil, tidak boleh ada spasi, dan tidak boleh sama dengan yang sudah ada. Password minimal 4 karakter. Kalau semua syarat terpenuhi, akun baru disimpan sebagai member dengan saldo 0 dan waktu pendaftaran tercatat. Saat login, pengguna diberi tiga kali kesempatan. Kalau username dan password cocok, program menyapa dan lanjut, tapi kalau tiga kali salah, pengguna dikembalikan ke menu awal. Selanjutnya ada fitur khusus admin untuk mengelola kelas. Fitur tambah kelas meminta nama, instruktur, jadwal, harga, dan kuota, lalu ID dibuat otomatis. Fitur ubah kelas menampilkan daftar kelas, meminta ID, lalu menanyakan data satu per satu. Kalau dikosongkan, data lama dipertahankan, dan kalau harga atau kuota yang dimasukkan tidak valid, nilainya tidak berubah. Fitur hapus kelas menolak penghapusan kalau kelas itu masih punya reservasi aktif, dan kalau boleh dihapus, program tetap meminta konfirmasi y/n dulu. Semua perubahan langsung disimpan ke kelas.json. Menu admin mengumpulkan semua fitur tadi dalam satu tampilan: lihat kelas, tambah, ubah, hapus, lihat semua reservasi, lihat daftar member, dan logout. Menu ini berulang terus sampai admin memilih 0. Setiap selesai satu aksi, layar ditahan dulu supaya hasilnya sempat dibaca. Untuk member, ada fitur top up, reservasi, riwayat, dan pembatalan. Pada top up, member memilih salah satu paket nominal atau mengetik nominal sendiri, asalkan masih dalam batas yang ditentukan, lalu saldo bertambah dan tersimpan. Pada reservasi, program mengecek empat hal berurutan: kelasnya ada, kuotanya masih tersisa, member belum pernah memesan kelas itu, dan saldonya cukup. Kalau semuanya lolos, saldo dipotong, kuota kelas berkurang satu, data reservasi dicatat dengan status “Aktif”, lalu semua file disimpan dan invoice dicetak. Riwayat hanya menampilkan reservasi milik member yang sedang login. Pada pembatalan, member memasukkan nomor invoice dari reservasi aktifnya, lalu status berubah jadi “Dibatalkan”, uang dikembalikan ke saldo, dan kuota kelas bertambah satu lagi. Menu member menampilkan saldo terbaru di bagian atas dan juga berulang sampai member memilih logout. Terakhir, fungsi main() menjadi pusat jalannya program. Fungsi ini memuat ketiga data, lalu menampilkan menu utama berisi Login, Registrasi, dan Keluar. Setelah login berhasil, program mengecek role akun: kalau admin masuk ke menu admin, selain itu masuk ke menu member. Di bagian paling bawah, main() dibungkus penanganan Ctrl+C, jadi kalau pengguna menekan tombol itu, program tidak langsung mati tetapi kembali ke menu awal. ini adalah flowchartny:
+Aplikasi berbasis terminal (CLI) yang ditulis dengan Python untuk mengelola reservasi kelas di pusat kebugaran: mulai dari registrasi dan login member, top up saldo, pemesanan kelas lengkap dengan invoice, hingga pengelolaan kelas dan pemantauan reservasi oleh admin. Seluruh data disimpan permanen dalam file JSON.
 
-<img width="1920" height="1080" alt="Screenshot 2026-11-03 201740" src="https://github.com/user-attachments/assets/946e13fd-00f5-456a-a4bb-7f46ab0f6110" />
+Show Image Show Image Show Image
 
-<img width="1920" height="1080" alt="Screenshot 2026-11-03 201820" src="https://github.com/user-attachments/assets/a37010c3-6610-4a62-a245-b53e1248757a" />
-
-<img width="1920" height="1080" alt="Screenshot 2026-11-03 201847" src="https://github.com/user-attachments/assets/678c4e6d-2e06-4c38-b173-f9b7193b105f" />
-
-Alur dimulai dari Mulai. Program lebih dulu mengimpor library dan mendeklarasikan konstanta, lalu membaca file users.json dan kelas.json. Kalau file belum ada, program menampilkan pesan “File belum ada, membuat file baru...” lalu menyimpan data default. Kalau file rusak (JSONDecodeError), muncul pesan “File rusak, memakai data default.” dan program juga memakai data default. Setelah data siap, program menampilkan menu utama dengan tiga pilihan: 1. Login, 2. Registrasi, dan 0. Keluar. Pengguna memasukkan pilihannya, lalu program mengecek satu per satu, mulai dari apakah pilihannya 1, kalau bukan lanjut ke 2, kalau bukan lagi lanjut ke 0. Jika angka yang dimasukkan tidak cocok dengan ketiganya, program menampilkan “Menu tidak valid!”, menahan layar dengan jeda(), lalu kembali ke menu utama lewat konektor 1.
-Jika pengguna memilih Login, ia diminta mengisi username dan password. Program mengecek apakah username ada dan password-nya cocok. Kalau salah, program menampilkan pesan beserta sisa percobaan, menambah hitungan percobaan, lalu mengecek apakah percobaan sudah mencapai tiga kali. Selama belum tiga kali, pengguna kembali diminta mengisi username dan password. Begitu gagal tiga kali, program menampilkan pesan “Login gagal 3 kali.” lalu kembali ke menu utama (1). Kalau username dan password benar, program menampilkan “Login berhasil! Selamat datang” lalu mengecek role. Role admin diarahkan ke konektor A (menu admin), sedangkan role selain admin diarahkan ke konektor B (menu user).
-
-Jika pengguna memilih Registrasi, ia memasukkan username terlebih dahulu. Program mengecek apakah username mengandung spasi, lalu mengecek apakah username sudah dipakai. Kalau salah satunya terjadi, muncul pesan error username dan program kembali ke menu utama setelah jeda(). Kalau valid, pengguna lanjut memasukkan password, lalu program mengecek apakah password kurang dari 4 karakter. Kalau kurang, muncul pesan “Password minimal 4 karakter!”. Kalau sudah benar, akun baru dibuat dengan role user dan waktu pendaftaran, disimpan ke users.json, muncul pesan “Registrasi berhasil! Silakan login.”, dan program kembali ke menu utama (1).
-
-Pilihan 0 (Keluar) adalah satu-satunya jalur menuju akhir program. Program menampilkan “Terima kasih telah menggunakan sistem ini!”, menjalankan break untuk keluar dari perulangan, lalu berhenti di Selesai.
-
-Pada menu admin (konektor A), admin memasukkan pilihan 0 sampai 6. Pilihan 1 (Lihat Kelas) menampilkan tabel seluruh kelas lalu kembali ke menu admin. Pilihan 2 (Tambah Kelas) membuat ID baru secara otomatis, lalu admin mengisi nama kelas, instruktur, jadwal, harga, dan kuota. Data kelas baru ditambahkan ke kelas.json dan muncul pesan “Kelas berhasil ditambahkan!”. Pilihan 3 (Ubah Kelas) menampilkan seluruh kelas, lalu admin memasukkan ID kelas yang ingin diubah. Jika ID tidak ditemukan, muncul pesan “Kelas tidak ditemukan!”. Jika ditemukan, admin mengisi data baru (menekan Enter berarti data tidak diubah). Untuk harga dan kuota, program mengecek apakah isiannya angka bulat dan tidak kurang dari batas minimal. Kalau tidak memenuhi, muncul pesan bahwa nilainya tidak diubah. Setelah itu perubahan disimpan ke kelas.json. Pilihan 4 (Hapus Kelas) alurnya mirip: tampilkan seluruh kelas, input ID, lalu jika ditemukan program menanyakan “Yakin hapus? (y/n)”. Jawaban y menghapus kelas dari kelas.json, sedangkan jawaban lain membatalkannya. Pilihan 5 menampilkan tabel semua reservasi dari seluruh member, dan pilihan 6 menampilkan tabel daftar akun member. Semua pilihan tersebut kembali ke menu admin setelah jeda(). Pilihan 0 (Logout) menampilkan “Logout berhasil.” lalu membawa admin kembali ke menu utama lewat konektor C, dan pilihan di luar itu menghasilkan pesan “Menu tidak valid!” lalu kembali ke menu admin.
-
-Pada menu user (konektor B), member memasukkan pilihan 0 sampai 5, dan saldo terbaru selalu tampil di bagian atas menu. Pilihan 1 (Lihat Kelas) menampilkan seluruh kelas beserta jadwal, harga, dan sisa kuota. Pilihan 2 (Reservasi Kelas) adalah alur yang paling panjang. Program menampilkan seluruh kelas, lalu member memasukkan ID kelas yang ingin dipesan. Setelah itu program mengecek empat hal berurutan. Jika ID tidak ada, muncul “Kelas tidak ditemukan!”. Jika kuota sudah habis, muncul “Maaf, kuota kelas sudah penuh!”. Jika member sudah pernah memesan kelas itu, muncul “Anda sudah mereservasi kelas ini!”. Jika saldo kurang dari harga kelas, muncul “Saldo tidak cukup!”. Semua pesan error ini diikuti jeda() lalu kembali ke menu user. Kalau semua pengecekan lolos, program mengurangi saldo dan kuota kelas, membuat data reservasi dengan nomor invoice dan status “Aktif”, menyimpan ketiga file (users.json, kelas.json, reservasi.json), menampilkan “Reservasi berhasil!”, lalu mencetak invoice berisi nomor invoice, tanggal, member, kelas, jadwal, total bayar, dan sisa saldo sebelum kembali ke menu user.
-
-Pilihan 3 (Top Up Saldo) menampilkan saldo saat ini dan paket nominal: Rp50.000, Rp100.000, Rp200.000, Rp500.000, serta “Nominal lain”. Jika member memilih 1 sampai 4, program memakai nominal paket tersebut. Jika memilih 5, member memasukkan nominal sendiri. Pilihan selain itu menghasilkan “Pilihan tidak valid!”. Setelah nominal didapat, program mengecek apakah nominalnya berada dalam batas Rp10.000 sampai Rp5.000.000. Jika tidak, muncul pesan batas nominal. Jika sesuai, saldo ditambah dan disimpan ke users.json, lalu muncul pesan “Top up berhasil!” beserta saldo terbaru. Semuanya kembali ke menu user.
-
-Pilihan 4 (Riwayat Reservasi) mengambil reservasi milik member yang sedang login dari data reservasi lalu menampilkannya dalam tabel. Pilihan 5 (Batalkan Reservasi) mengambil reservasi milik member yang berstatus “Aktif”. Jika tidak ada, muncul “Tidak ada reservasi aktif.” Jika ada, program menampilkan tabelnya lalu member memasukkan nomor invoice. Jika nomor tidak cocok, muncul “Invoice tidak ditemukan!”. Jika cocok, status berubah menjadi “Dibatalkan”, saldo dikembalikan sebesar harga kelas (refund), dan kuota kelas ditambah satu selama kelasnya masih ada. Setelah itu ketiga file disimpan dan muncul pesan “Reservasi dibatalkan. Refund ... dikembalikan ke saldo.” Pilihan 0 (Logout) membawa member kembali ke menu utama lewat konektor C, dan pilihan lain menghasilkan “Menu tidak valid!” lalu kembali ke menu user.
+Daftar Isi
+Anggota Kelompok
+Deskripsi Singkat
+Fitur Program
+Teknologi dan Cara Menjalankan
+Struktur Program dan Penyimpanan Data
+Flowchart dan Penjelasan Alur
+Output Program dan Penjelasan
+Anggota Kelompok
+No	Nama	NIM
+1	Alfian Nugraha (2609116084) 
+2	Novitasari Muhammad Nor (2609116082)
+3	Marexcel Elibino (2609116087) 
+4 Muhammad Ardhika Prsanjayu (2609116108)
 
 
+
+
+Program Studi Sistem Informasi, Fakultas Teknik, Universitas Mulawarman, Samarinda.
+
+Deskripsi Singkat
+
+Sistem Reservasi Gym & Fitness memudahkan pengelolaan kelas kebugaran (Zumba, Body Pump, Body Combat, Spinning, Pilates, dan kelas lain yang ditambahkan admin) tanpa pencatatan manual. Program membedakan dua peran pengguna:
+
+Member mendaftar sendiri, mengisi saldo, memesan kelas yang masih memiliki kuota, melihat riwayat, dan membatalkan reservasi dengan pengembalian dana (refund) otomatis ke saldo.
+Admin mengelola data kelas (tambah, ubah, hapus) serta memantau seluruh reservasi dan daftar member.
+
+Setiap perubahan data langsung ditulis ke file JSON sehingga data tetap ada ketika program ditutup dan dijalankan kembali.
+
+Fitur Program
+Fitur Umum
+Fitur	Keterangan
+Registrasi member	Username otomatis diubah ke huruf kecil, tidak boleh mengandung spasi dan tidak boleh sama dengan username lain. Password minimal 4 karakter.
+Login dengan batas percobaan	Maksimal 3 kali percobaan. Password disembunyikan saat diketik (ditampilkan sebagai *).
+Keamanan password	Password disimpan dalam bentuk hash SHA-256, bukan teks asli.
+Pemisahan peran	Setelah login, pengguna diarahkan ke menu Admin atau menu Member sesuai role-nya.
+Validasi input	Input teks tidak boleh kosong, input angka harus bilangan bulat dan memenuhi nilai minimum, pilihan menu yang salah ditolak.
+Penyimpanan otomatis	File JSON dibuat otomatis jika belum ada. Jika file rusak, program memakai data bawaan. Data pengguna versi lama dilengkapi otomatis oleh lengkapi_data_user().
+Penanganan Ctrl+C	Program tidak langsung berhenti, melainkan kembali ke menu awal.
+Fitur Member
+Menu	Keterangan
+1. Lihat Kelas	Menampilkan tabel kelas: ID, nama, instruktur, jadwal, harga, dan sisa kuota.
+2. Reservasi Kelas	Memesan kelas berdasarkan ID. Program memeriksa kelas ada, kuota belum penuh, belum pernah memesan kelas yang sama (yang masih aktif), dan saldo cukup. Jika berhasil, saldo dipotong, kuota berkurang 1, dan invoice dicetak.
+3. Top Up Saldo	Pilih paket Rp50.000 / Rp100.000 / Rp200.000 / Rp500.000 atau nominal lain. Nominal harus antara Rp10.000 dan Rp5.000.000.
+4. Riwayat Reservasi	Menampilkan semua reservasi milik member (status Aktif maupun Dibatalkan).
+5. Batalkan Reservasi	Membatalkan reservasi aktif berdasarkan nomor invoice. Status menjadi Dibatalkan, saldo dikembalikan penuh, dan kuota kelas bertambah 1.
+Fitur Admin
+Menu	Keterangan
+1. Lihat Kelas	Menampilkan seluruh kelas beserta sisa kuota.
+2. Tambah Kelas	Menambah kelas baru. ID dibuat otomatis (ID terbesar + 1). Harga dan kuota minimal 1.
+3. Ubah Kelas	Mengubah nama, instruktur, jadwal, harga, dan kuota. Mengosongkan input (Enter) berarti data tidak diubah. Harga minimal 1, kuota minimal 0.
+4. Hapus Kelas	Menghapus kelas setelah konfirmasi y/n. Kelas yang masih memiliki reservasi aktif tidak dapat dihapus.
+5. Lihat Semua Reservasi	Menampilkan seluruh reservasi dari semua member.
+6. Lihat Daftar Member	Menampilkan username, role, saldo, dan waktu terdaftar semua akun.
+Akun Bawaan
+Username	Password	Role
+admin	admin123	admin
+
+Akun admin dibuat otomatis jika belum ada. Member baru dibuat lewat menu Registrasi.
+
+Data Kelas Bawaan
+ID	Kelas	Instruktur	Jadwal	Harga	Kuota
+1	Zumba	Fina	Senin 07:00	Rp50.000	15
+2	Body Pump	Juhdi	Selasa 17:00	Rp40.000	20
+3	Body Combat	Alfian	Rabu 18:30	Rp60.000	12
+4	Spinning	Excel	Kamis 06:30	Rp55.000	10
+5	Pilates	Vita	Jumat 16:00	Rp65.000	8
+Teknologi dan Cara Menjalankan
+Komponen	Keterangan
+Bahasa	Python 3.6 atau lebih baru
+Library bawaan Python	json, os, hashlib, time, random
+Library tambahan	prettytable (tampilan tabel) dan pwinput (input password bertanda *)
+Penyimpanan	File JSON (users.json, kelas.json, reservasi.json)
+
+Instalasi library tambahan
+
+bash
+pip install prettytable pwinput
+
+Menjalankan program
+
+bash
+python konsul2.py
+
+Pada saat pertama kali dijalankan, ketiga file JSON dibuat otomatis di folder yang sama dengan konsul2.py.
+
+Struktur Program dan Penyimpanan Data
+Struktur Folder
+text
+.
+├── konsul2.py                    # kode program utama
+├── reservasi_gym_fitnes.drawio   # flowchart (3 halaman: Main, Menu Admin, Menu User)
+├── README.md
+├── images/
+│   ├── flowchart/                # gambar flowchart
+│   └── output/                   # screenshot output program
+├── users.json                    # dibuat otomatis
+├── kelas.json                    # dibuat otomatis
+└── reservasi.json                # dibuat otomatis
+Struktur Kode
+
+Kode dibagi menjadi fungsi-fungsi kecil yang dikelompokkan berdasarkan tugasnya.
+
+Kelompok	Fungsi / Konstanta	Tugas
+Konfigurasi	FILE_USERS, FILE_KELAS, FILE_RESERVASI, PAKET_TOPUP, ROLE_VALID, MIN_TOPUP, MAX_TOPUP, DEFAULT_USERS, DEFAULT_KELAS	Nama file data, paket dan batas top up, daftar role, serta data awal (akun admin dan 5 kelas).
+Keamanan	hash_password(), sudah_hash()	Membuat hash SHA-256 dan memeriksa apakah suatu teks sudah berupa hash (64 karakter heksadesimal).
+Utilitas tampilan dan input	bersihkan_layar(), jeda(), rupiah(), input_teks(), input_angka(), input_password()	Membersihkan layar, menunggu Enter, format Rp50.000, serta input yang tervalidasi (tidak kosong, angka bulat, password tersembunyi).
+Penyimpanan data	simpan_data(), muat_data(), lengkapi_data_user()	Menulis dan membaca JSON, membuat file dari data default bila belum ada atau rusak, serta melengkapi data pengguna versi lama.
+Tampilan tabel	tampil_kelas(), tampil_reservasi(), tampil_users(), cetak_invoice()	Mencetak tabel (PrettyTable) dan invoice reservasi.
+Fungsi bantu logika	cari_kelas(), buat_id_baru(), buat_no_invoice(), jumlah_reservasi_aktif(), sudah_reservasi(), bayar_saldo()	Mencari kelas, membuat ID kelas dan nomor invoice unik, menghitung reservasi aktif, memeriksa duplikasi reservasi, dan memotong saldo.
+Autentikasi	registrasi(), login()	Pendaftaran member dan verifikasi login (maksimal 3 percobaan).
+Fitur admin	tambah_kelas(), ubah_kelas(), hapus_kelas(), menu_admin()	Pengelolaan kelas dan menu admin.
+Fitur member	top_up(), reservasi_kelas(), riwayat_user(), batal_reservasi(), menu_user()	Top up, pemesanan, riwayat, pembatalan, dan menu member.
+Program utama	main() dan blok if __name__ == "__main__"	Memuat data, menampilkan menu utama, mengarahkan ke menu sesuai role, dan menangkap Ctrl+C.
+Struktur Data di Memori
+
+Saat program dimulai, tiga file JSON dibaca satu kali ke dalam tiga variabel di main(), lalu dikirim sebagai parameter ke fungsi-fungsi yang membutuhkan.
+
+Variabel	Tipe	Isi
+users	dict (kunci: username)	Data akun: password (hash), role, saldo, waktu terdaftar
+daftar_kelas	list berisi dict	Data kelas
+reservasi	list berisi dict	Data transaksi reservasi
+
+Setiap kali data berubah (registrasi, top up, reservasi, pembatalan, tambah/ubah/hapus kelas), fungsi simpan_data() langsung menulis ulang file JSON yang bersangkutan.
+
+Penyimpanan Data (File JSON)
+
+Data disimpan dalam tiga file berformat JSON (UTF-8, indentasi 4 spasi).
+
+1. users.json — data akun (objek dengan username sebagai kunci)
+
+Field	Tipe	Keterangan
+password	string	Hash SHA-256 dari password
+role	string	admin atau user
+saldo	integer	Saldo dalam rupiah
+terdaftar	string	Waktu registrasi (dd-mm-yyyy HH:MM), - untuk admin bawaan
+json
+{
+    "admin": {
+        "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+        "role": "admin",
+        "saldo": 0,
+        "terdaftar": "-"
+    },
+    "budi": {
+        "password": "e8979d2eb704c94fa2fa5044edba1c29232526eec3965ffc64308b6783f2de12",
+        "role": "user",
+        "saldo": 60000,
+        "terdaftar": "03-11-2026 12:43"
+    }
+}
+
+2. kelas.json — data kelas (array)
+
+Field	Tipe	Keterangan
+id	integer	ID unik kelas
+nama	string	Nama kelas
+instruktur	string	Nama instruktur
+jadwal	string	Hari dan jam kelas
+harga	integer	Harga per sesi (rupiah)
+kuota	integer	Sisa kuota
+json
+[
+    {
+        "id": 1,
+        "nama": "Zumba",
+        "instruktur": "Fina",
+        "jadwal": "Senin 07:00",
+        "harga": 50000,
+        "kuota": 15
+    }
+]
+
+3. reservasi.json — data reservasi (array)
+
+Field	Tipe	Keterangan
+invoice	string	Nomor invoice unik, format INV-yymmdd-xxxx
+username	string	Pemesan
+id_kelas	integer	ID kelas yang dipesan
+nama_kelas	string	Nama kelas saat dipesan
+jadwal	string	Jadwal saat dipesan
+harga	integer	Harga yang dibayar
+waktu	string	Waktu pemesanan
+status	string	Aktif atau Dibatalkan
+json
+[
+    {
+        "invoice": "INV-261103-6234",
+        "username": "budi",
+        "id_kelas": 2,
+        "nama_kelas": "Body Pump",
+        "jadwal": "Selasa 17:00",
+        "harga": 40000,
+        "waktu": "03-11-2026 12:43",
+        "status": "Aktif"
+    }
+]
+
+Reservasi yang dibatalkan tidak dihapus, melainkan hanya diubah statusnya menjadi Dibatalkan agar riwayat tetap tercatat.
+
+Flowchart dan Penjelasan Alur
+
+Flowchart dibuat dengan draw.io (file sumber: reservasi_gym_fitnes.drawio) dan terdiri dari 3 halaman: Main, Menu Admin, dan Menu User. Setiap halaman ditampilkan utuh sebagai gambaran umum, lalu dipotong per fitur agar mudah dibaca. Klik gambar untuk memperbesar.
+
+Simbol yang digunakan
+
+Simbol	Arti
+Oval hijau	Mulai / Selesai
+Jajar genjang oranye	Input atau output (tampilan)
+Persegi biru / ungu	Proses / pemanggilan fungsi
+Belah ketupat kuning	Keputusan (Ya / Tidak)
+Silinder oranye tua	Proses yang membaca atau menulis data (JSON) atau menampilkan tabel data
+Lingkaran bernomor 1	Penghubung kembali ke awal perulangan menu pada halaman yang sama
+Pentagon A, B, C	Penghubung antarhalaman: A = Menu Admin, B = Menu Member, C = kembali ke Menu Utama setelah logout
+Halaman 1: Alur Utama (Main)
+<p align="center"> <a href="images/flowchart/01_main_full.png"><img src="images/flowchart/01_main_full.png" width="860" alt="Flowchart utama (gambaran umum)"></a><br> <em>Gambar 1. Flowchart utama (gambaran umum)</em> </p>
+
+Alur utama mencakup inisialisasi program, menu utama, login, registrasi, dan keluar. Rinciannya dijelaskan per bagian berikut.
+
+a. Inisialisasi dan memuat data
+<p align="center"> <a href="images/flowchart/01a_main_inisialisasi_menu.png"><img src="images/flowchart/01a_main_inisialisasi_menu.png" width="820" alt="Flowchart utama: inisialisasi, memuat data, dan menu utama"></a><br> <em>Gambar 2. Flowchart utama: inisialisasi, memuat data, dan menu utama</em> </p>
+Program dimulai, lalu mengimpor library (os, time, json, hashlib, random, prettytable, pwinput) dan mendeklarasikan konstanta serta data default.
+Program membaca users.json, kelas.json, dan reservasi.json.
+Jika terjadi FileNotFoundError, program menampilkan "File belum ada, membuat file baru...". Jika terjadi ValueError (JSON rusak atau tipe data salah), program menampilkan "File rusak, memakai data default.". Pada kedua kasus, data default disimpan ke file lewat simpan_data() lalu dipakai.
+lengkapi_data_user(users) dijalankan: password lama yang belum di-hash diubah menjadi hash, akun yang rusak dibuang, akun admin dipastikan ada, lalu users.json disimpan.
+Layar dibersihkan dan menu utama ditampilkan (1. Login, 2. Registrasi, 0. Keluar). Pilihan pengguna diperiksa berurutan: '1' → Login, '2' → Registrasi, '0' → Keluar, selain itu → "Menu tidak valid!".
+b. Login
+<p align="center"> <a href="images/flowchart/01b_main_login.png"><img src="images/flowchart/01b_main_login.png" width="820" alt="Flowchart utama: proses login"></a><br> <em>Gambar 3. Flowchart utama: proses login</em> </p>
+Menampilkan judul === LOGIN === dan menyiapkan penghitung percobaan = 0.
+Selama percobaan < 3: pengguna memasukkan username (diubah ke huruf kecil) dan password (disamarkan).
+Program memeriksa apakah username ada di users dan hash password cocok.
+Tidak cocok: tampil "Username/password salah! (sisa percobaan: ...)", percobaan bertambah 1, lalu kembali ke pemeriksaan jumlah percobaan.
+Cocok: tampil "Login berhasil! Selamat datang, username.", kemudian program memeriksa role. Jika admin menuju konektor A (Menu Admin), selain itu menuju konektor B (Menu Member).
+Jika percobaan sudah mencapai 3, tampil "Login gagal 3 kali.", program menjalankan jeda() lalu kembali ke menu utama.
+c. Registrasi
+<p align="center"> <a href="images/flowchart/01c_main_registrasi.png"><img src="images/flowchart/01c_main_registrasi.png" width="640" alt="Flowchart utama: proses registrasi"></a><br> <em>Gambar 4. Flowchart utama: proses registrasi</em> </p>
+Menampilkan === REGISTRASI MEMBER === dan meminta username (diubah ke huruf kecil).
+Validasi berurutan:
+Username mengandung spasi → "Username tidak boleh mengandung spasi!".
+Username sudah ada di users → "Username sudah dipakai!".
+Jika lolos, pengguna memasukkan password (disamarkan). Jika panjangnya kurang dari 4 karakter → "Password minimal 4 karakter!".
+Jika semua valid, akun dibuat dengan isi: password (hash), role = 'user', saldo = 0, dan terdaftar = waktu sekarang. Data disimpan ke users.json dan tampil "Registrasi berhasil! Silakan login.".
+Setiap jalur (berhasil maupun gagal) berakhir di jeda() lalu kembali ke menu utama.
+d. Keluar dan pilihan tidak valid
+<p align="center"> <a href="images/flowchart/01d_main_keluar_invalid.png"><img src="images/flowchart/01d_main_keluar_invalid.png" width="860" alt="Flowchart utama: keluar program dan pilihan tidak valid"></a><br> <em>Gambar 5. Flowchart utama: keluar program dan pilihan tidak valid</em> </p>
+Pilihan '0': tampil "Terima kasih telah menggunakan sistem ini!", perulangan dihentikan dengan break, dan program selesai.
+Pilihan lain: tampil "Menu tidak valid!", jeda(), lalu kembali ke menu utama.
+Halaman 2: Menu Admin
+<p align="center"> <a href="images/flowchart/02_admin_full.png"><img src="images/flowchart/02_admin_full.png" width="860" alt="Flowchart Menu Admin (gambaran umum)"></a><br> <em>Gambar 6. Flowchart Menu Admin (gambaran umum)</em> </p>
+
+Menu admin berjalan dalam perulangan while True sampai admin memilih 0. Logout. Setiap fitur (kecuali logout) diakhiri jeda() lalu kembali ke awal menu.
+
+a. Menu dan Lihat Kelas (pilihan 1)
+<p align="center"> <a href="images/flowchart/02a_admin_menu_lihat_kelas.png"><img src="images/flowchart/02a_admin_menu_lihat_kelas.png" width="560" alt="Flowchart Menu Admin: tampilan menu dan Lihat Kelas"></a><br> <em>Gambar 7. Flowchart Menu Admin: tampilan menu dan Lihat Kelas</em> </p>
+
+Dari konektor A, layar dibersihkan dan menu admin ditampilkan (enam pilihan + logout), lalu pilihan dibaca. Pilihan '1' memanggil tampil_kelas(daftar_kelas) untuk menampilkan tabel semua kelas.
+
+b. Tambah Kelas (pilihan 2)
+<p align="center"> <a href="images/flowchart/02b_admin_tambah_kelas.png"><img src="images/flowchart/02b_admin_tambah_kelas.png" width="430" alt="Flowchart Menu Admin: Tambah Kelas"></a><br> <em>Gambar 8. Flowchart Menu Admin: Tambah Kelas</em> </p>
+ID baru dibuat oleh buat_id_baru() (ID terbesar + 1, atau 1 jika belum ada kelas).
+Admin mengisi nama kelas, instruktur, jadwal (tidak boleh kosong), serta harga dan kuota (bilangan bulat minimal 1).
+Data kelas baru ditambahkan dan disimpan ke kelas.json, lalu tampil "Kelas berhasil ditambahkan!".
+c. Ubah Kelas (pilihan 3)
+<p align="center"> <a href="images/flowchart/02c_admin_ubah_kelas.png"><img src="images/flowchart/02c_admin_ubah_kelas.png" width="640" alt="Flowchart Menu Admin: Ubah Kelas"></a><br> <em>Gambar 9. Flowchart Menu Admin: Ubah Kelas</em> </p>
+Tabel kelas ditampilkan, lalu admin memasukkan ID kelas. cari_kelas() mencari kelas tersebut. Jika tidak ditemukan → "Kelas tidak ditemukan!".
+Jika ditemukan, admin diminta mengisi nama, instruktur, dan jadwal baru. Mengosongkan input berarti data tidak diubah.
+Untuk harga dan kuota, setiap input yang diisi divalidasi: harus angka bulat (jika bukan → "... harus angka, tidak diubah.") dan memenuhi nilai minimum (harga minimal 1, kuota minimal 0; jika tidak → "... tidak diubah (minimal ...)."). Nilai yang tidak valid dilewati tanpa membatalkan perubahan lainnya.
+Perubahan disimpan ke kelas.json dan tampil "Kelas berhasil diperbarui!".
+d. Hapus Kelas (pilihan 4)
+<p align="center"> <a href="images/flowchart/02d_admin_hapus_kelas.png"><img src="images/flowchart/02d_admin_hapus_kelas.png" width="640" alt="Flowchart Menu Admin: Hapus Kelas"></a><br> <em>Gambar 10. Flowchart Menu Admin: Hapus Kelas</em> </p>
+Tabel kelas ditampilkan dan admin memasukkan ID kelas. Jika tidak ditemukan → "Kelas tidak ditemukan!".
+Program memeriksa jumlah_reservasi_aktif(reservasi, id) > 0. Jika kelas masih memiliki reservasi aktif → "Kelas masih memiliki reservasi aktif, tidak bisa dihapus!" dan proses dihentikan.
+Jika tidak ada reservasi aktif, admin diminta konfirmasi "Yakin hapus ...? (y/n)". Jawaban selain y → "Penghapusan dibatalkan.". Jawaban y → kelas dihapus, kelas.json disimpan, dan tampil "Kelas berhasil dihapus!".
+e. Lihat Semua Reservasi dan Lihat Daftar Member (pilihan 5 dan 6)
+<p align="center"> <a href="images/flowchart/02e_admin_lihat_reservasi_member.png"><img src="images/flowchart/02e_admin_lihat_reservasi_member.png" width="860" alt="Flowchart Menu Admin: Lihat Semua Reservasi dan Lihat Daftar Member"></a><br> <em>Gambar 11. Flowchart Menu Admin: Lihat Semua Reservasi dan Lihat Daftar Member</em> </p>
+Pilihan '5' memanggil tampil_reservasi(reservasi) untuk menampilkan semua reservasi dari seluruh member.
+Pilihan '6' memanggil tampil_users(users) untuk menampilkan username, role, saldo, dan waktu terdaftar.
+f. Logout dan pilihan tidak valid
+<p align="center"> <a href="images/flowchart/02f_admin_logout_invalid.png"><img src="images/flowchart/02f_admin_logout_invalid.png" width="860" alt="Flowchart Menu Admin: logout dan pilihan tidak valid"></a><br> <em>Gambar 12. Flowchart Menu Admin: logout dan pilihan tidak valid</em> </p>
+Pilihan '0': tampil "Logout berhasil.", perulangan dihentikan (break), dan alur kembali ke menu utama melalui konektor C.
+Pilihan lain: tampil "Menu tidak valid!", jeda(), lalu kembali ke menu admin.
+Halaman 3: Menu User (Member)
+<p align="center"> <a href="images/flowchart/03_user_full.png"><img src="images/flowchart/03_user_full.png" width="860" alt="Flowchart Menu User (gambaran umum)"></a><br> <em>Gambar 13. Flowchart Menu User (gambaran umum)</em> </p>
+
+Menu member juga berjalan dalam perulangan while True sampai member memilih 0. Logout. Selain daftar menu, saldo member ditampilkan di bagian atas setiap kali menu muncul.
+
+a. Menu dan Lihat Kelas (pilihan 1)
+<p align="center"> <a href="images/flowchart/03a_user_menu_lihat_kelas.png"><img src="images/flowchart/03a_user_menu_lihat_kelas.png" width="480" alt="Flowchart Menu User: tampilan menu dan Lihat Kelas"></a><br> <em>Gambar 14. Flowchart Menu User: tampilan menu dan Lihat Kelas</em> </p>
+
+Dari konektor B, layar dibersihkan, menu member ditampilkan beserta saldo, lalu pilihan dibaca. Pilihan '1' memanggil tampil_kelas(daftar_kelas).
+
+b. Reservasi Kelas (pilihan 2)
+<p align="center"> <a href="images/flowchart/03b_user_reservasi_kelas.png"><img src="images/flowchart/03b_user_reservasi_kelas.png" width="640" alt="Flowchart Menu User: Reservasi Kelas"></a><br> <em>Gambar 15. Flowchart Menu User: Reservasi Kelas</em> </p>
+
+Setelah tabel kelas ditampilkan dan member memasukkan ID kelas, program melakukan empat pemeriksaan berurutan. Jika salah satu gagal, proses berhenti dengan pesan yang sesuai lalu menuju jeda():
+
+Urutan	Pemeriksaan	Pesan jika gagal
+1	Kelas dengan ID tersebut ada (k is None?)	Kelas tidak ditemukan!
+2	Kuota masih tersedia (kuota <= 0?)	Maaf, kuota kelas sudah penuh!
+3	Belum pernah memesan kelas yang sama dan masih aktif (sudah_reservasi)	Anda sudah mereservasi kelas ini!
+4	Saldo mencukupi (bayar_saldo gagal jika saldo < harga)	Saldo tidak cukup! Harga ..., saldo ...
+
+Jika semua pemeriksaan lolos: saldo dikurangi harga kelas, kuota kelas dikurangi 1, dan data reservasi dibuat (nomor invoice dari buat_no_invoice(), status Aktif) lalu ditambahkan ke daftar reservasi. Ketiga file (users.json, kelas.json, reservasi.json) disimpan, tampil "Reservasi berhasil!", dan cetak_invoice() mencetak invoice.
+
+c. Top Up Saldo (pilihan 3)
+<p align="center"> <a href="images/flowchart/03c_user_top_up.png"><img src="images/flowchart/03c_user_top_up.png" width="860" alt="Flowchart Menu User: Top Up Saldo"></a><br> <em>Gambar 16. Flowchart Menu User: Top Up Saldo</em> </p>
+Menampilkan saldo saat ini dan lima pilihan: Rp50.000, Rp100.000, Rp200.000, Rp500.000, serta Nominal lain.
+Jika pilihan 1 sampai 4, nominal diambil dari PAKET_TOPUP. Jika pilihan 5, member memasukkan nominal sendiri. Pilihan lain → "Pilihan tidak valid!".
+Nominal diperiksa: jika kurang dari MIN_TOPUP (Rp10.000) atau lebih dari MAX_TOPUP (Rp5.000.000) → "Nominal top up harus Rp10.000 - Rp5.000.000!".
+Jika valid, saldo ditambah, users.json disimpan, dan tampil "Top up berhasil! Saldo sekarang: ...".
+d. Riwayat Reservasi (pilihan 4)
+<p align="center"> <a href="images/flowchart/03d_user_riwayat.png"><img src="images/flowchart/03d_user_riwayat.png" width="400" alt="Flowchart Menu User: Riwayat Reservasi"></a><br> <em>Gambar 17. Flowchart Menu User: Riwayat Reservasi</em> </p>
+
+Program menyaring reservasi yang username-nya sama dengan member yang login (milik), lalu menampilkannya dengan tampil_reservasi(milik). Semua status (Aktif dan Dibatalkan) ikut ditampilkan.
+
+e. Batalkan Reservasi (pilihan 5)
+<p align="center"> <a href="images/flowchart/03e_user_batalkan_reservasi.png"><img src="images/flowchart/03e_user_batalkan_reservasi.png" width="640" alt="Flowchart Menu User: Batalkan Reservasi"></a><br> <em>Gambar 18. Flowchart Menu User: Batalkan Reservasi</em> </p>
+Program menyaring reservasi milik member yang berstatus Aktif (aktif). Jika kosong → "Tidak ada reservasi aktif.".
+Jika ada, tabel reservasi aktif ditampilkan dan member memasukkan nomor invoice (diubah ke huruf besar). Jika tidak cocok dengan reservasi aktif mana pun → "Invoice tidak ditemukan!".
+Jika cocok:
+status reservasi diubah menjadi Dibatalkan,
+saldo member ditambah sebesar harga reservasi (refund),
+kelas dicari lewat cari_kelas(); jika kelas masih ada, kuotanya ditambah 1,
+users.json, kelas.json, dan reservasi.json disimpan, lalu tampil "Reservasi dibatalkan. Refund ... dikembalikan ke saldo.".
+f. Logout dan pilihan tidak valid
+<p align="center"> <a href="images/flowchart/03f_user_logout_invalid.png"><img src="images/flowchart/03f_user_logout_invalid.png" width="640" alt="Flowchart Menu User: logout dan pilihan tidak valid"></a><br> <em>Gambar 19. Flowchart Menu User: logout dan pilihan tidak valid</em> </p>
+Pilihan '0': tampil "Logout berhasil.", perulangan dihentikan (break), dan alur kembali ke menu utama melalui konektor C.
+Pilihan lain: tampil "Menu tidak valid!", jeda(), lalu kembali ke menu member.
 
 
