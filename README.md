@@ -2,35 +2,21 @@
 
 Aplikasi **berbasis terminal (CLI)** yang ditulis dengan **Python** untuk mengelola reservasi kelas di pusat kebugaran: mulai dari registrasi dan login member, top up saldo, pemesanan kelas lengkap dengan invoice, hingga pengelolaan kelas dan pemantauan reservasi oleh admin. Seluruh data disimpan permanen dalam file **JSON**.
 
-![Python](https://img.shields.io/badge/Python-3.6%2B-blue) ![Interface](https://img.shields.io/badge/Interface-CLI-lightgrey) ![Storage](https://img.shields.io/badge/Storage-JSON-orange)
-
----
-
-## Daftar Isi
-
-1. [Anggota Kelompok](#anggota-kelompok)
-2. [Deskripsi Singkat](#deskripsi-singkat)
-3. [Fitur Program](#fitur-program)
-4. [Teknologi dan Cara Menjalankan](#teknologi-dan-cara-menjalankan)
-5. [Struktur Program dan Penyimpanan Data](#struktur-program-dan-penyimpanan-data)
-6. [Flowchart dan Penjelasan Alur](#flowchart-dan-penjelasan-alur)
-7. [Output Program dan Penjelasan](#output-program-dan-penjelasan)
-
 ---
 
 ## Anggota Kelompok
 
-| No | Nama | NIM |
-|:--:|------|:---:|
-| 1 | Alfian Nugraha | 2609116084 |
-| 2 | Novitasari Muhammad Nor | 2609116082 |
-| 3 | Marexcel Elibino | 2609116087 |
-| 4 | Muhammad Ardhika Prasanjayu | 2609116108 |
-
+| No | Nama | NIM | Peran dalam kelompok |
+|:--:|------|:---:|---------------------|
+| 1 | Marexcel Elibino | 2609116087 | Kode program dan flowchart |
+| 2 | Muhammad Ardhika Prasanjayu | 2609116108 | |
+| 3 | Alfian Nugraha | 2609116084 | |
+| 4 | Novitasari Muhammad Noor | 2609116082 | |
 
 Program Studi Sistem Informasi, Fakultas Teknik, Universitas Mulawarman, Samarinda.
 
 ---
+
 
 ## Deskripsi Singkat
 
