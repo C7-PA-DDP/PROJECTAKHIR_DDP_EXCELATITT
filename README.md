@@ -22,11 +22,11 @@ Aplikasi **berbasis terminal (CLI)** yang ditulis dengan **Python** untuk mengel
 
 | No | Nama | NIM |
 |:--:|------|:---:|
-| 1 | Marexcel Elibino | 2609116087 |
-| 2 | [Nama Anggota 2] | [NIM] |
-| 3 | [Nama Anggota 3] | [NIM] |
-| 4 | [Nama Anggota 4] | [NIM] |
-| 5 | [Nama Anggota 5] | [NIM] |
+| 1 | Alfian Nugraha | 2609116084 |
+| 2 | Novitasari Muhammad Nor | 2609116082 |
+| 3 | Marexcel Elibino | 2609116087 |
+| 4 | Muhammad Ardhika Prasanjayu | 2609116108 |
+
 
 Program Studi Sistem Informasi, Fakultas Teknik, Universitas Mulawarman, Samarinda.
 
