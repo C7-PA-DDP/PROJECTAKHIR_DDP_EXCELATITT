@@ -8,9 +8,9 @@ Aplikasi **berbasis terminal (CLI)** yang ditulis dengan **Python** untuk mengel
 
 | No | Nama | NIM | Peran dalam kelompok |
 |:--:|------|:---:|---------------------|
-| 1 | Marexcel Elibino | 2609116087 | Kode program dan Flowchart |
-| 2 | Muhammad Ardhika Prasanjayu | 2609116108 | Codingan Python |
-| 3 | Alfian Nugraha | 2609116084 | Laporan dan Flowchart |
+| 1 |  Alfian Nugraha | 2609116084 | Laporan dan Flowchart |
+| 2 | Muhammad Ardhika Prasanjayu | 2609116108 | Codingan Python dan Flowchart|
+| 3 | Marexcel Elibino | 2609116087 | Codingan Python dan Flowchart |
 | 4 | Novitasari Muhammad Noor | 2609116082 | Laporan dan Flowchart |
 
 Program Studi Sistem Informasi, Fakultas Teknik, Universitas Mulawarman, Samarinda.
@@ -81,31 +81,6 @@ Akun admin dibuat otomatis jika belum ada. Member baru dibuat lewat menu **Regis
 | 3 | Body Combat | Alfian | Rabu 18:30 | Rp60.000 | 12 |
 | 4 | Spinning | Excel | Kamis 06:30 | Rp55.000 | 10 |
 | 5 | Pilates | Vita | Jumat 16:00 | Rp65.000 | 8 |
-
----
-
-## Teknologi dan Cara Menjalankan
-
-| Komponen | Keterangan |
-|----------|------------|
-| Bahasa | Python 3.6 atau lebih baru |
-| Library bawaan Python | `json`, `os`, `hashlib`, `time`, `random` |
-| Library tambahan | [`prettytable`](https://pypi.org/project/prettytable/) (tampilan tabel) dan [`pwinput`](https://pypi.org/project/pwinput/) (input password bertanda `*`) |
-| Penyimpanan | File JSON (`users.json`, `kelas.json`, `reservasi.json`) |
-
-**Instalasi library tambahan**
-
-```bash
-pip install prettytable pwinput
-```
-
-**Menjalankan program**
-
-```bash
-python konsul2.py
-```
-
-Pada saat pertama kali dijalankan, ketiga file JSON dibuat otomatis di folder yang sama dengan `konsul2.py`.
 
 ---
 
