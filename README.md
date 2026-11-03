@@ -476,212 +476,65 @@ Program menyaring reservasi yang `username`-nya sama dengan member yang login (`
 - Pilihan `'0'`: tampil *"Logout berhasil."*, perulangan dihentikan (`break`), dan alur kembali ke menu utama melalui konektor **C**.
 - Pilihan lain: tampil *"Menu tidak valid!"*, `jeda()`, lalu kembali ke menu member.
 
----
+# 3,1 Menu Awal dan Login
 
-## Output Program dan Penjelasan
+1. Tampilan menu utama
+<img width="376" height="161" alt="image" src="https://github.com/user-attachments/assets/240768eb-c8bf-451e-abbe-2406a1fb05a3" />
 
-Screenshot berikut diambil dari satu rangkaian pengujian berurutan: registrasi member `budi` → login → top up → reservasi → pembatalan → login sebagai admin untuk mengelola kelas dan memantau data. Karena itu angka saldo, kuota, dan status pada tiap gambar saling berkesinambungan.
+Menu utama menampilkan judul SISTEM RESERVASI GYM & FITNESS dengan tiga pilihan: Login, Registrasi, dan Keluar
 
-### Menu Utama, Registrasi, dan Login
+<img width="542" height="195" alt="image" src="https://github.com/user-attachments/assets/d2446505-3d9c-4a96-aa4f-98aadd87133a" />
+2. Tampilan menu login
 
-<p align="center">
-  <a href="images/output/01_menu_utama.png"><img src="images/output/01_menu_utama.png" width="596" alt="Tampilan menu utama"></a><br>
-  <em>Gambar 20. Tampilan menu utama</em>
-</p>
+<img width="562" height="303" alt="image" src="https://github.com/user-attachments/assets/eb2b91fc-cdf8-4293-9f44-201339010104" />
+Tampilan menu login salah memasukan user 3 kali 
+3. Setelah 3 kali salah, pengguna akan di arahkan ke menu utama
 
-Menu utama menampilkan judul **SISTEM RESERVASI GYM & FITNESS** dengan tiga pilihan: Login, Registrasi, dan Keluar.
+# 3.2 Menu Admin 
+1. Tampilan Menu admin 
 
-<p align="center">
-  <a href="images/output/02_registrasi_berhasil.png"><img src="images/output/02_registrasi_berhasil.png" width="596" alt="Registrasi member berhasil"></a><br>
-  <em>Gambar 21. Registrasi member berhasil</em>
-</p>
+<img width="486" height="217" alt="image" src="https://github.com/user-attachments/assets/5b1929f5-fbb3-421d-b278-943b2d20b43b" />
 
-Member baru memilih menu **2**, mengisi username `budi` dan password (tampil sebagai `*`). Akun disimpan di `users.json` dengan `role = user`, `saldo = 0`, dan password dalam bentuk hash.
+<img width="756" height="457" alt="image" src="https://github.com/user-attachments/assets/e17ee8ce-9c88-49ee-88be-8388e67a4109" />
+2. Submenu untuk mengelola reservasi GYM/Fitness
 
-<p align="center">
-  <a href="images/output/03_registrasi_username_spasi.png"><img src="images/output/03_registrasi_username_spasi.png" width="596" alt="Registrasi ditolak: username mengandung spasi"></a><br>
-  <em>Gambar 22. Registrasi ditolak: username mengandung spasi</em>
-</p>
+<img width="492" height="105" alt="image" src="https://github.com/user-attachments/assets/4b4ee42e-c988-400c-933c-691b1b046242" />
+3. Menu tambah kelas
+Admin mengisi nama kelas, instruktur, jadwal, harga, dan sisa kuota 
 
-<p align="center">
-  <a href="images/output/04_registrasi_username_dipakai.png"><img src="images/output/04_registrasi_username_dipakai.png" width="596" alt="Registrasi ditolak: username sudah dipakai"></a><br>
-  <em>Gambar 23. Registrasi ditolak: username sudah dipakai</em>
-</p>
+<img width="725" height="262" alt="image" src="https://github.com/user-attachments/assets/e9d2e6c3-917d-4cbd-96d0-9c89c8c4561c" />
+4. Menu ubah kelas 
+Admin memilih ID kelas lalu mengisi data yang baru 
 
-<p align="center">
-  <a href="images/output/05_registrasi_password_pendek.png"><img src="images/output/05_registrasi_password_pendek.png" width="596" alt="Registrasi ditolak: password kurang dari 4 karakter"></a><br>
-  <em>Gambar 24. Registrasi ditolak: password kurang dari 4 karakter</em>
-</p>
+<img width="706" height="267" alt="image" src="https://github.com/user-attachments/assets/fead8e32-d1fa-445b-a7cb-2d672cab110d" />
+5. Menu hapus kelas 
+Sebelum dihapus, program akan meminta konfirmasi (y/n)
 
-Tiga validasi registrasi: username dengan spasi (`budi santoso`) ditolak, username yang sudah ada (`admin`) ditolak, dan password yang kurang dari 4 karakter ditolak. Pada ketiga kasus tidak ada akun yang dibuat.
+<img width="497" height="187" alt="image" src="https://github.com/user-attachments/assets/06350974-a904-46a9-bb4c-eb6fe5742150" />
+6. Daftar akun
 
-<p align="center">
-  <a href="images/output/06_login_gagal_3x.png"><img src="images/output/06_login_gagal_3x.png" width="596" alt="Login gagal tiga kali berturut-turut"></a><br>
-  <em>Gambar 25. Login gagal tiga kali berturut-turut</em>
-</p>
+# 3.3 Menu User
+1. Tampilan menu user
 
-Setiap kesalahan username/password menampilkan sisa percobaan (2, 1, lalu 0). Setelah 3 kali gagal, tampil *"Login gagal 3 kali."* dan program kembali ke menu utama.
+<img width="355" height="202" alt="image" src="https://github.com/user-attachments/assets/e3edbff0-a88e-40ad-b3f3-bdbce2285c84" />
 
-<p align="center">
-  <a href="images/output/07_login_berhasil.png"><img src="images/output/07_login_berhasil.png" width="596" alt="Login berhasil"></a><br>
-  <em>Gambar 26. Login berhasil</em>
-</p>
+<img width="791" height="352" alt="image" src="https://github.com/user-attachments/assets/1f6007bd-8dfc-43f3-807a-78e8ced98291" />
+2. Reservasi kelas
 
-Login yang benar menampilkan pesan sambutan. Program kemudian membersihkan layar dan langsung membuka menu sesuai `role` (Member atau Admin).
+<img width="487" height="277" alt="image" src="https://github.com/user-attachments/assets/06264b6d-9940-494d-9be0-9d10780d97fc" />
+3. Tampilan apabila dari user tersebut tidak memiliki saldo yang cukup 
 
-### Menu Member
+<img width="487" height="277" alt="image" src="https://github.com/user-attachments/assets/604d769f-8499-4ddd-9361-777f8f5607e9" />
+4. Tampilan Top up saldo 
 
-<p align="center">
-  <a href="images/output/08_menu_member.png"><img src="images/output/08_menu_member.png" width="596" alt="Tampilan menu member"></a><br>
-  <em>Gambar 27. Tampilan menu member</em>
-</p>
+<img width="792" height="801" alt="image" src="https://github.com/user-attachments/assets/4e823982-75aa-4237-8392-2319520c0505" />
+5. Tampilan setelah berhasil reservasi kelas 
+Invoice dicetak beserta kode transaksi serta sisa saldo
 
-Menu member menampilkan **saldo saat ini** di bagian atas, diikuti lima fitur dan opsi logout.
+<img width="1012" height="416" alt="image" src="https://github.com/user-attachments/assets/8ad4e066-a6a5-46f7-a7ec-eb86c9c76613" />
+6. Tampilan Riwayat reservasi kelas 
 
-<p align="center">
-  <a href="images/output/09_member_lihat_kelas.png"><img src="images/output/09_member_lihat_kelas.png" width="727" alt="Member: Lihat Kelas"></a><br>
-  <em>Gambar 28. Member: Lihat Kelas</em>
-</p>
+# 3.4 Keluar
+Program akan keluar 
 
-Daftar kelas ditampilkan dalam tabel lengkap dengan harga (format rupiah) dan sisa kuota.
-
-<p align="center">
-  <a href="images/output/10_member_topup_berhasil.png"><img src="images/output/10_member_topup_berhasil.png" width="596" alt="Member: top up berhasil"></a><br>
-  <em>Gambar 29. Member: top up berhasil</em>
-</p>
-
-Member memilih paket **2 (Rp100.000)**. Saldo bertambah dari Rp0 menjadi Rp100.000 dan tersimpan di `users.json`.
-
-<p align="center">
-  <a href="images/output/11_member_topup_ditolak.png"><img src="images/output/11_member_topup_ditolak.png" width="596" alt="Member: top up ditolak (di bawah batas minimal)"></a><br>
-  <em>Gambar 30. Member: top up ditolak (di bawah batas minimal)</em>
-</p>
-
-Pada pilihan **Nominal lain**, nominal Rp5.000 ditolak karena batas top up adalah Rp10.000 sampai Rp5.000.000. Saldo tidak berubah.
-
-<p align="center">
-  <a href="images/output/12_member_saldo_tidak_cukup.png"><img src="images/output/12_member_saldo_tidak_cukup.png" width="727" alt="Member: reservasi gagal karena saldo tidak cukup"></a><br>
-  <em>Gambar 31. Member: reservasi gagal karena saldo tidak cukup</em>
-</p>
-
-Sebelum top up, member mencoba memesan Zumba (Rp50.000) dengan saldo Rp0, sehingga muncul *"Saldo tidak cukup! Harga Rp50.000, saldo Rp0."*.
-
-<p align="center">
-  <a href="images/output/13_member_reservasi_invoice.png"><img src="images/output/13_member_reservasi_invoice.png" width="727" alt="Member: reservasi berhasil dan invoice dicetak"></a><br>
-  <em>Gambar 32. Member: reservasi berhasil dan invoice dicetak</em>
-</p>
-
-Setelah saldo mencukupi, reservasi **Zumba** berhasil. Saldo berkurang dari Rp100.000 menjadi Rp50.000, kuota Zumba berkurang dari 15 menjadi 14, dan **invoice** dicetak berisi nomor invoice, tanggal, member, kelas, jadwal, total bayar, dan sisa saldo.
-
-<p align="center">
-  <a href="images/output/14_member_sudah_reservasi.png"><img src="images/output/14_member_sudah_reservasi.png" width="727" alt="Member: reservasi ditolak karena sudah memesan kelas yang sama"></a><br>
-  <em>Gambar 33. Member: reservasi ditolak karena sudah memesan kelas yang sama</em>
-</p>
-
-Mencoba memesan Zumba untuk kedua kalinya ditolak dengan pesan *"Anda sudah mereservasi kelas ini!"*. Tampak pula sisa kuota Zumba sudah menjadi 14.
-
-<p align="center">
-  <a href="images/output/15_member_kuota_penuh.png"><img src="images/output/15_member_kuota_penuh.png" width="727" alt="Member: reservasi ditolak karena kuota penuh"></a><br>
-  <em>Gambar 34. Member: reservasi ditolak karena kuota penuh</em>
-</p>
-
-Kelas **Pilates** yang kuotanya telah diubah admin menjadi 0 (lihat Gambar 42) tidak dapat dipesan dan menampilkan *"Maaf, kuota kelas sudah penuh!"*.
-
-<p align="center">
-  <a href="images/output/16_member_riwayat.png"><img src="images/output/16_member_riwayat.png" width="860" alt="Member: Riwayat Reservasi"></a><br>
-  <em>Gambar 35. Member: Riwayat Reservasi</em>
-</p>
-
-Riwayat menampilkan semua reservasi milik member, yaitu Zumba dan Body Pump, keduanya berstatus **Aktif** pada saat itu.
-
-<p align="center">
-  <a href="images/output/17_member_batal_reservasi.png"><img src="images/output/17_member_batal_reservasi.png" width="860" alt="Member: pembatalan reservasi dan refund"></a><br>
-  <em>Gambar 36. Member: pembatalan reservasi dan refund</em>
-</p>
-
-Member memasukkan nomor invoice reservasi Zumba. Status berubah menjadi *Dibatalkan*, harga Rp50.000 dikembalikan ke saldo (dari Rp10.000 menjadi Rp60.000), dan kuota Zumba bertambah kembali menjadi 15.
-
-<p align="center">
-  <a href="images/output/18_member_invoice_tidak_ditemukan.png"><img src="images/output/18_member_invoice_tidak_ditemukan.png" width="860" alt="Member: nomor invoice tidak ditemukan"></a><br>
-  <em>Gambar 37. Member: nomor invoice tidak ditemukan</em>
-</p>
-
-Nomor invoice yang tidak terdaftar pada reservasi aktif ditolak dengan pesan *"Invoice tidak ditemukan!"*.
-
-<p align="center">
-  <a href="images/output/19_member_logout.png"><img src="images/output/19_member_logout.png" width="596" alt="Member: logout"></a><br>
-  <em>Gambar 38. Member: logout</em>
-</p>
-
-Pilihan **0** menampilkan *"Logout berhasil."* dan membawa pengguna kembali ke menu utama.
-
-### Menu Admin
-
-<p align="center">
-  <a href="images/output/20_menu_admin.png"><img src="images/output/20_menu_admin.png" width="596" alt="Tampilan menu admin"></a><br>
-  <em>Gambar 39. Tampilan menu admin</em>
-</p>
-
-Admin masuk dengan akun bawaan `admin` / `admin123`. Menu admin berisi enam fitur pengelolaan dan opsi logout.
-
-<p align="center">
-  <a href="images/output/21_admin_lihat_kelas.png"><img src="images/output/21_admin_lihat_kelas.png" width="727" alt="Admin: Lihat Kelas"></a><br>
-  <em>Gambar 40. Admin: Lihat Kelas</em>
-</p>
-
-Tabel kelas mencerminkan transaksi member sebelumnya: kuota Body Pump menjadi 19 (ada 1 reservasi aktif), sedangkan Zumba kembali 15 karena reservasinya dibatalkan.
-
-<p align="center">
-  <a href="images/output/22_admin_tambah_kelas.png"><img src="images/output/22_admin_tambah_kelas.png" width="596" alt="Admin: Tambah Kelas"></a><br>
-  <em>Gambar 41. Admin: Tambah Kelas</em>
-</p>
-
-Admin menambahkan kelas **Yoga** (instruktur Vita, Sabtu 08:00, Rp45.000, kuota 10). ID dibuat otomatis (menjadi 6) dan data disimpan di `kelas.json`.
-
-<p align="center">
-  <a href="images/output/23_admin_ubah_kelas.png"><img src="images/output/23_admin_ubah_kelas.png" width="727" alt="Admin: Ubah Kelas"></a><br>
-  <em>Gambar 42. Admin: Ubah Kelas</em>
-</p>
-
-Admin mengubah kelas **Pilates (ID 5)**. Nama dan instruktur dikosongkan (tidak diubah), jadwal diubah menjadi *Jumat 15:30*, harga `abc` ditolak karena bukan angka (*"Harga harus angka, tidak diubah."*), dan kuota diubah menjadi 0 (diterima karena minimal kuota adalah 0). Perubahan lain tetap tersimpan.
-
-<p align="center">
-  <a href="images/output/24_admin_hapus_ditolak.png"><img src="images/output/24_admin_hapus_ditolak.png" width="727" alt="Admin: hapus kelas ditolak karena masih ada reservasi aktif"></a><br>
-  <em>Gambar 43. Admin: hapus kelas ditolak karena masih ada reservasi aktif</em>
-</p>
-
-Kelas **Body Pump (ID 2)** tidak dapat dihapus karena masih memiliki reservasi aktif.
-
-<p align="center">
-  <a href="images/output/25_admin_hapus_berhasil.png"><img src="images/output/25_admin_hapus_berhasil.png" width="727" alt="Admin: hapus kelas berhasil"></a><br>
-  <em>Gambar 44. Admin: hapus kelas berhasil</em>
-</p>
-
-Kelas **Yoga (ID 6)** tidak memiliki reservasi, sehingga setelah konfirmasi `y` kelas berhasil dihapus.
-
-<p align="center">
-  <a href="images/output/26_admin_lihat_reservasi.png"><img src="images/output/26_admin_lihat_reservasi.png" width="860" alt="Admin: Lihat Semua Reservasi"></a><br>
-  <em>Gambar 45. Admin: Lihat Semua Reservasi</em>
-</p>
-
-Admin melihat seluruh reservasi. Reservasi Zumba berstatus **Dibatalkan** dan Body Pump berstatus **Aktif**, sesuai aktivitas member sebelumnya.
-
-<p align="center">
-  <a href="images/output/27_admin_lihat_member.png"><img src="images/output/27_admin_lihat_member.png" width="596" alt="Admin: Lihat Daftar Member"></a><br>
-  <em>Gambar 46. Admin: Lihat Daftar Member</em>
-</p>
-
-Daftar akun menampilkan username, role, saldo, dan waktu terdaftar. Saldo `budi` (Rp60.000) sama dengan saldo terakhir setelah refund.
-
-### Keluar dari Program
-
-<p align="center">
-  <a href="images/output/28_keluar_program.png"><img src="images/output/28_keluar_program.png" width="596" alt="Keluar dari program"></a><br>
-  <em>Gambar 47. Keluar dari program</em>
-</p>
-
-Pilihan **0** pada menu utama menampilkan pesan penutup dan menghentikan program.
-
----
-
-> Dokumen ini dibuat sebagai bagian dari tugas kelompok **Sistem Reservasi Gym & Fitness**.
+<img width="1012" height="416" alt="image" src="https://github.com/user-attachments/assets/3689ab96-f344-457c-96a4-80734846d29c" />
