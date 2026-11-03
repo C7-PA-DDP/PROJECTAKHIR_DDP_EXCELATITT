@@ -1,0 +1,32 @@
+[
+    {
+        "invoice": "INV-261103-4247",
+        "username": "user",
+        "id_kelas": 4,
+        "nama_kelas": "Spinning",
+        "jadwal": "Kamis 06:30",
+        "harga": 55000,
+        "waktu": "03-11-2026 03:41",
+        "status": "Dibatalkan"
+    },
+    {
+        "invoice": "INV-261103-8012",
+        "username": "user",
+        "id_kelas": 2,
+        "nama_kelas": "Body Pump",
+        "jadwal": "Selasa 17:00",
+        "harga": 40000,
+        "waktu": "03-11-2026 03:41",
+        "status": "Aktif"
+    },
+    {
+        "invoice": "INV-261103-7836",
+        "username": "user",
+        "id_kelas": 1,
+        "nama_kelas": "Zumba",
+        "jadwal": "Senin 07:00",
+        "harga": 50000,
+        "waktu": "03-11-2026 03:47",
+        "status": "Aktif"
+    }
+]
